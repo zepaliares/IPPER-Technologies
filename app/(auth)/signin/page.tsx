@@ -45,10 +45,6 @@ export default function SignIn() {
               <div className="flex flex-wrap -mx-3 mb-4 md:grid-cols-1 lg:grid-cols-2">
                 <div className="w-full px-3">
                   <div className="flex justify-between">
-                    <label className="flex items-center">
-                      <input type="checkbox" className="form-checkbox" />
-                      <span className="text-gray-600 ml-2">Manter conectado</span>
-                    </label>
                   </div>
                   <div>
                   <Link href="/reset-password" className="text-sm font-medium text-indigo-600 hover:underline">Esqueceu sua senha?</Link>
