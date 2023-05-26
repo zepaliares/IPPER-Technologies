@@ -6,7 +6,7 @@ import TestimonialImage3 from '@/public/images/testimonial3.jpg'
 
 export default function Testimonials() {
   return (
-    <section className="relative">
+    <section className="relative bg-preto-fundo">
 
       {/* Illustration behind content */}
       <div className="absolute left-1/2 transform -translate-x-1/2 bottom-0 pointer-events-none -mb-32" aria-hidden="true">
@@ -18,10 +18,7 @@ export default function Testimonials() {
               <stop stopColor="#DFDFDF" offset="100%" />
             </linearGradient>
           </defs>
-          <g transform="translate(0 -3)" fill="url(#illustration-02)" fillRule="evenodd">
-            <circle cx="1630" cy="128" r="128" />
-            <circle cx="178" cy="481" r="40" />
-          </g>
+          
         </svg>
       </div>
 
@@ -30,7 +27,7 @@ export default function Testimonials() {
 
           {/* Section header */}
           <div className="max-w-3xl mx-auto text-center pb-12 md:pb-16">
-            <h2 className="h2 mb-4">Feedback de empresas parceiras:</h2>
+            <h2 className="h2 mb-4 text-white">Feedback de empresas parceiras:</h2>
 
           </div>
 
@@ -48,7 +45,7 @@ export default function Testimonials() {
                   </svg>
                   <Image className="relative rounded-full" src={TestimonialImage} width={96} height={96} alt="Testimonial 01" />
                 </div>
-                <blockquote className="text-xl font-medium mb-4">
+                <blockquote className="text-xl font-medium mb-4 text-white">
                   “ – A equipe da IPPER é formada por especialistas altamente qualificados em inteligência artificial, tecnologia de visão computacional e segurança no local de trabalho, garantindo soluções eficazes e confiáveis. “
                 </blockquote>
 
@@ -71,7 +68,7 @@ export default function Testimonials() {
                   </svg>
                   <Image className="relative rounded-full" src={TestimonialImage2} width={96} height={96} alt="Testimonial 01" />
                 </div>
-                <blockquote className="text-xl font-medium mb-4">
+                <blockquote className="text-xl font-medium mb-4 text-white">
                   “ – O software da IPPER além de detectar o uso incorreto do capacete, o sistema de reconhecimento de capacetes pode enviar alertas em tempo real ao supervisor, proporcionando uma resposta rápida em caso de emergência.“
                 </blockquote>
 
@@ -94,7 +91,7 @@ export default function Testimonials() {
                   </svg>
                   <Image className="relative rounded-full" src={TestimonialImage3} width={96} height={96} alt="Testimonial 01" />
                 </div>
-                <blockquote className="text-xl font-medium mb-4">
+                <blockquote className="text-xl font-medium mb-4 text-white">
                   “ – A IPPER também possui um amplo potencial de evolução, explorando novas tecnologias e capacidades, como a integração com outras tecnologias emergentes, para tornar o local de trabalho mais seguro. “
                 </blockquote>
                 

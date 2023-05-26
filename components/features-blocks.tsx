@@ -1,6 +1,6 @@
 export default function FeaturesBlocks() {
   return (
-    <section className="relative">
+    <section className="relative bg-preto-fundo">
 
       {/* Section background (needs .relative class on parent and next sibling elements) */}
       <div className="absolute inset-0 top-1/2 md:mt-24 lg:mt-0 bg-preto-fundo pointer-events-none" aria-hidden="true"></div>
@@ -11,12 +11,12 @@ export default function FeaturesBlocks() {
 
           {/* Section header */}
           <div className="max-w-3xl mx-auto text-center pb-12 md:pb-20">
-            <h2 className="h2 mb-4">Sobre o projeto</h2>
+            <h2 className="h2 mb-4 text-white">Sobre o projeto</h2>
             <p className="text-xl text-gray-600">A IPPER usa tecnologia de visão computacional para identificar automaticamente se os funcionários estão usando capacete de segurança, oferencendo soluções eficazes para melhorar a segurança no local de trabalho e proteger os funcionários</p>
           </div>
 
           {/* Items */}
-          <div className="max-w-sm mx-auto grid gap-6 md:grid-cols-2 lg:grid-cols-3 items-start md:max-w-2xl lg:max-w-none">
+          <div className="max-w-sm mx-auto grid gap-6 md:grid-cols-2 lg:grid-cols-2 items-start md:max-w-2xl lg:max-w-none">
 
             {/* 1st item */}
             <div className="relative flex flex-col items-center p-6 bg-preto-fundo rounded shadow-xl">
@@ -31,7 +31,7 @@ export default function FeaturesBlocks() {
                   </g>
                 </g>
               </svg>
-              <h4 className="text-xl font-bold leading-snug tracking-tight mb-1">Tecnologia de reconhecimento de capacetes por IA</h4>
+              <h4 className="text-xl font-bold leading-snug tracking-tight mb-1 text-white">Tecnologia de reconhecimento de capacetes por IA</h4>
               <p className="text-gray-600 text-center">A tecnologia de reconhecimento de capacetes por IA usa algoritmos para detectar se os trabalhadores estão usando capacetes de segurança adequados em locais de trabalho perigosos.</p>
             </div>
 
@@ -47,7 +47,7 @@ export default function FeaturesBlocks() {
                   </g>
                 </g>
               </svg>
-              <h4 className="text-xl font-bold leading-snug tracking-tight mb-1">Sobre o projeto</h4>
+              <h4 className="text-xl font-bold leading-snug tracking-tight mb-1 text-white">Finalidade da empresa</h4>
               <p className="text-gray-600 text-center">A IPPER usa tecnologia de visão computacional para identificar automaticamente se os funcionários estão usando capacetes de segurança, oferecendo soluções eficazes para melhorar a segurança no local de trabalho e proteger os funcionários.</p>
             </div>
 
@@ -64,7 +64,7 @@ export default function FeaturesBlocks() {
                   </g>
                 </g>
               </svg>
-              <h4 className="text-xl font-bold leading-snug tracking-tight mb-1">Funcionalidades do sistema de reconhecimento de capacetes</h4>
+              <h4 className="text-xl font-bold leading-snug tracking-tight mb-1 text-white">Funcionalidades do sistema de reconhecimento de capacetes</h4>
               <p className="text-gray-600 text-center">O sistema de reconhecimento de capacetes possui funcionalidades como detecção de uso incorreto do capacete pelos trabalhadores e a capacidade de enviar alertas em tempo real para o supervisor.</p>
             </div>
 
@@ -81,7 +81,7 @@ export default function FeaturesBlocks() {
                   </g>
                 </g>
               </svg>
-              <h4 className="text-xl font-bold leading-snug tracking-tight mb-1">O futuro da tecnologia de reconhecimento de capacetes por IA</h4>
+              <h4 className="text-xl font-bold leading-snug tracking-tight mb-1 text-white">O futuro da tecnologia de reconhecimento de capacetes por IA</h4>
               <p className="text-gray-600 text-center">A tecnologia de reconhecimento de capacetes por IA tem potencial de evoluir no futuro e monitorar outros aspectos da segurança do trabalhador, além de integrar com outras tecnologias emergentes, como realidade virtual e aumentada.</p>
             </div>
 
@@ -97,7 +97,7 @@ export default function FeaturesBlocks() {
                   </g>
                 </g>
               </svg>
-              <h4 className="text-xl font-bold leading-snug tracking-tight mb-1">Aplicações do sistema de reconhecimento de capacetes</h4>
+              <h4 className="text-xl font-bold leading-snug tracking-tight mb-1 text-white">Aplicações do sistema de reconhecimento de capacetes</h4>
               <p className="text-gray-600 text-center">O sistema de reconhecimento de capacetes pode ser aplicado em vários setores, incluindo construção, mineração, transporte e petróleo e gás.</p>
             </div>
 
@@ -112,7 +112,7 @@ export default function FeaturesBlocks() {
                   </g>
                 </g>
               </svg>
-              <h4 className="text-xl font-bold leading-snug tracking-tight mb-1">Benefícios do sistema de reconhecimento de capacetes</h4>
+              <h4 className="text-xl font-bold leading-snug tracking-tight mb-1 text-white">Benefícios do sistema de reconhecimento de capacetes</h4>
               <p className="text-gray-600 text-center">O sistema identifica trabalhadores sem capacetes de segurança, registra dados para regulamentação e reduz os custos de indenização e tratamentos médicos decorrentes de acidentes.</p>
             </div>
 

@@ -22,7 +22,7 @@ export default function Features() {
   }, [])
 
   return (
-    <section className="relative">
+    <section className="relative bg-preto-fundo">
 
       {/* Section background (needs .relative class on parent and next sibling elements) */}
       <div className="absolute inset-0 bg-preto-fundo pointer-events-none mb-16" aria-hidden="true"></div>
@@ -33,7 +33,7 @@ export default function Features() {
 
           {/* Section header */}
           <div className="max-w-3xl mx-auto text-center pb-12 md:pb-16">
-            <h1 className="h2 mb-4">Como realmente funciona?</h1>
+            <h1 className="h2 mb-4 text-white">Como realmente funciona?</h1>
           </div>
 
           {/* Section content */}
@@ -50,7 +50,7 @@ export default function Features() {
                   onClick={(e) => { e.preventDefault(); setTab(1); }}
                 >
                   <div>
-                    <div className="font-bold leading-snug tracking-tight mb-1">Segurança</div>
+                    <div className="font-bold leading-snug tracking-tight mb-1 text-white">Segurança</div>
                     <div className="text-gray-600">Com a IPPER é possivel verificar se os funcionários estão utilizando o capacete de segurança, isso aumenta a segurança na empresa. Essa tecnologia permite que a empresa identifique, em tempo real, se o trabalhador está cumprindo as normas de segurança estabelecidas. Isso reduz o risco de acidentes e aumenta a eficácia das medidas de segurança no trabalho</div>
                   </div>
                 </a>
@@ -60,7 +60,7 @@ export default function Features() {
                   onClick={(e) => { e.preventDefault(); setTab(2); }}
                 >
                   <div>
-                    <div className="font-bold leading-snug tracking-tight mb-1">Verificação</div>
+                    <div className="font-bold leading-snug tracking-tight mb-1 text-white">Verificação</div>
                     <div className="text-gray-600">Caso algum funcionário não esteja usando o capacete, ou esteja usando ele incorretamente, a verificação por meio de visão computacional diferenciará esse funcionário dos demais com a cor vermelha em seu quadrado de reconhecimento.</div>
                   </div>
                 </a>
@@ -70,7 +70,7 @@ export default function Features() {
                   onClick={(e) => { e.preventDefault(); setTab(3); }}
                 >
                   <div>
-                    <div className="font-bold leading-snug tracking-tight mb-1">Aviso</div>
+                    <div className="font-bold leading-snug tracking-tight mb-1 text-white">Aviso</div>
                     <div className="text-gray-600">Quando um funcionário não faz o uso correto do seu equipamento de segurança, um aviso será enviado para seu supervisor, para que ele possa alertar o funcionário, para que ele use corretamente seu equipamento de proteção para garantir sua segurança.</div>
                   </div>
                 </a>
