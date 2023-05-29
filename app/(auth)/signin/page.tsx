@@ -4,8 +4,41 @@ export const metadata = {
 }
 
 import Link from 'next/link'
+import react from 'react';
+import { useRouter } from 'next/router'
+import connectToDatabase from '../../../conexao'
 
 export default function SignIn() {
+  const router = useRouter();
+  const [email, setEmail] = react.useState('');
+  const [password, setPassword] = react.useState('');
+
+  const handleEmailChange = (event: { target: { value: react.SetStateAction<string>; }; }) => {
+    setEmail(event.target.value);
+  };
+
+  const handlePasswordChange = (event: { target: { value: react.SetStateAction<string>; }; }) => {
+    setPassword(event.target.value);
+  };
+
+  const handleFormSubmit = async (event: { preventDefault: () => void; }) => {
+    event.preventDefault();
+
+    // Conectar ao banco de dados
+    const db = await connectToDatabase();
+
+    // Verificar as credenciais no banco de dados
+    const collection = db.collection('dados');
+    const user = await collection.findOne({ email, senha: password });
+
+    if (user) {
+      // Redirecionar para a página inicial (home)
+      router.push('../../(default)/page');
+    } else {
+      // Exibir mensagem de erro de login incorreto
+      alert('Credenciais de login incorretas. Tente novamente.');
+    }
+  };
   return (
     <section className="bg-preto-fundo"style={{ minHeight: '100vh' }}>
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
@@ -23,11 +56,11 @@ export default function SignIn() {
 
           {/* Form */}
           <div className="max-w-sm mx-auto">
-            <form>
+            <form onSubmit={handleFormSubmit}>
               <div className="flex flex-wrap -mx-3 mb-4">
                 <div className="w-full px-3">
                   <label className="block text-gray-400 text-sm font-medium mb-1" htmlFor="email">Email</label>
-                  <input id="email" type="email" className="form-input w-full text-gray-800" placeholder="Insira seu endereço de email" required />
+                  <input id="email" type="email" className="form-input w-full text-gray-800" placeholder="Insira seu endereço de email" required value={email} onChange={handleEmailChange}/>
                 </div>
               </div>
               <div className="flex flex-wrap -mx-3 mb-4">
@@ -36,7 +69,7 @@ export default function SignIn() {
                     <label className="block text-gray-400 text-sm font-medium mb-1" htmlFor="password">Senha</label>
                    
                   </div>
-                  <input id="password" type="password" className="form-input w-full text-gray-800" placeholder="Insira sua senha" required />
+                  <input id="password" type="password" className="form-input w-full text-gray-800" placeholder="Insira sua senha" required value={password} onChange={handlePasswordChange}/>
                   
                 </div>
                 
@@ -45,6 +78,10 @@ export default function SignIn() {
               <div className="flex flex-wrap -mx-3 mb-4 md:grid-cols-1 lg:grid-cols-2">
                 <div className="w-full px-3">
                   <div className="flex justify-between">
+                    <label className="flex items-center">
+                      <input type="checkbox" className="form-checkbox" />
+                      <span className="text-gray-600 ml-2">Manter conectado</span>
+                    </label>
                   </div>
                   <div>
                   <Link href="/reset-password" className="text-sm font-medium text-indigo-600 hover:underline">Esqueceu sua senha?</Link>
