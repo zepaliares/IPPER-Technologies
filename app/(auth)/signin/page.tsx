@@ -28,8 +28,10 @@ export default function SignIn() {
 
       if (!usuario || usuario.senha !== senha) {
         setErrorMessage('Credenciais inválidas');
+        console.log('erro')
         return;
       }
+      console.log('certo')
 
       router.push('../../(default)/page.tsx');
     };
