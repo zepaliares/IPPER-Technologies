@@ -26,10 +26,13 @@ const Login = () => {
 
     if (!usuario || usuario.senha !== senha) {
       setErrorMessage('Credenciais inválidas');
+      console.log('erro')
       return;
     }
 
     router.push('../../(default)/page.tsx');
+    console.log('sucesso')
+
   };
 
 
