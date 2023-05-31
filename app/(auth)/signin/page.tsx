@@ -23,15 +23,18 @@ const Login = () => {
 
     // Busca o usuário com base no email
     const usuario = await collection.findOne({ email });
+    console.log(usuario)
+    console.log(email)
+
 
     if (!usuario || usuario.senha !== senha) {
       setErrorMessage('Credenciais inválidas');
-      console.log('erro')
+      
       return;
     }
 
     router.push('../../(default)/page.tsx');
-    console.log('sucesso')
+    
 
   };
 
