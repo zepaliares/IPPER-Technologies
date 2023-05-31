@@ -23,8 +23,8 @@ const Login = () => {
 
     // Busca o usuário com base no email
     const usuario = await collection.findOne({ email });
-    console.log(usuario)
-    console.log(email)
+    console.log('usuario: ' + usuario)
+    console.log('email: ' + email)
 
 
     if (!usuario || usuario.senha !== senha) {
