@@ -1,45 +1,36 @@
-"use client";
+'use client'
 
 import Link from 'next/link'
-import connectToDatabase from '../../../conexao';
-import { useState } from 'react';
-import { useRouter } from 'next/router';
-import { Db } from 'mongodb';
+import React, { FormEvent } from 'react';
 
-const Login = () => {
-  const [email, setEmail] = useState('');
-  const [senha, setSenha] = useState('');
-  const [errorMessage, setErrorMessage] = useState('');
-  const router = useRouter();
+export default function SignIn() {
 
-  const handleLogin = async (e: React.FormEvent) => {
-    e.preventDefault();
+  const handleSignIn = (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
 
-    // Conecta ao banco de dados
-    const db: Db = await connectToDatabase();
+    // Selecionar os elementos de input
+    const emailInput = document.getElementById('email') as HTMLInputElement;
+    const passwordInput = document.getElementById('password') as HTMLInputElement;
 
-    // Acessa a coleção 'dados'
-    const collection = db.collection('dados');
+    // Obter os valores dos inputs
+    const email = emailInput.value;
+    const password = passwordInput.value;
 
-    // Busca o usuário com base no email
-    const usuario = await collection.findOne({ email });
-    console.log('usuario: ' + usuario)
-    console.log('email: ' + email)
+    // Fazer algo com os valores (por exemplo, enviar uma solicitação de login)
+    if (email === 'teste@email.com' && password === 'senha123') {
+      // Redirecionar para a página desejada
+      console.log('Credenciais válidas, redirecionando...');
 
-
-    if (!usuario || usuario.senha !== senha) {
-      setErrorMessage('Credenciais inválidas');
-      
-      return;
+      window.location.href = './';
+    } else {
+      // Lógica para exibir uma mensagem de erro, por exemplo
+      console.log('Credenciais inválidas');
     }
-
-    router.push('../../(default)/page.tsx');
-    
-
-  };
-
-
+  }
   return (
+
+
+
     <section className="bg-preto-fundo" style={{ minHeight: '100vh' }}>
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
         <div className="pt-32 pb-12 md:pt-40 md:pb-20">
@@ -53,14 +44,14 @@ const Login = () => {
               </div>
             </div>
           </div>
-          {errorMessage && <p>{errorMessage}</p>}
+          
           {/* Form */}
           <div className="max-w-sm mx-auto">
-            <form onSubmit={handleLogin}>
+            <form onSubmit={handleSignIn}>
               <div className="flex flex-wrap -mx-3 mb-4">
                 <div className="w-full px-3">
                   <label className="block text-gray-400 text-sm font-medium mb-1" htmlFor="email">Email</label>
-                  <input id="email" type="email" className="form-input w-full text-gray-800" placeholder="Insira seu endereço de email" required value={email} onChange={(e) => setEmail(e.target.value)} />
+                  <input id="email" type="email" className="form-input w-full text-gray-800" placeholder="Insira seu endereço de email" required/>
                 </div>
               </div>
               <div className="flex flex-wrap -mx-3 mb-4">
@@ -69,7 +60,7 @@ const Login = () => {
                     <label className="block text-gray-400 text-sm font-medium mb-1" htmlFor="password">Senha</label>
 
                   </div>
-                  <input id="password" type="password" className="form-input w-full text-gray-800" placeholder="Insira sua senha" required value={senha} onChange={(e) => setSenha(e.target.value)} />
+                  <input id="password" type="password" className="form-input w-full text-gray-800" placeholder="Insira sua senha" required/>
 
                 </div>
 
@@ -103,8 +94,4 @@ const Login = () => {
       </div>
     </section>
   )
-}
-export default function SignIn() {
-  return <Login />;
-
 }
