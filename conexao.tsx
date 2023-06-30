@@ -10,3 +10,4 @@ const connectToDatabase = async (): Promise<Db> => {
 };
 
 export default connectToDatabase;
+

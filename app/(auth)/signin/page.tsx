@@ -1,13 +1,11 @@
 'use client'
 
 import Link from 'next/link'
-import React, { FormEvent } from 'react';
+import React from 'react';
 
 export default function SignIn() {
 
-  const handleSignIn = (event: React.FormEvent<HTMLFormElement>) => {
-    event.preventDefault();
-
+  const handleSignIn = async () => {
     // Selecionar os elementos de input
     const emailInput = document.getElementById('email') as HTMLInputElement;
     const passwordInput = document.getElementById('password') as HTMLInputElement;
@@ -16,20 +14,22 @@ export default function SignIn() {
     const email = emailInput.value;
     const password = passwordInput.value;
 
-    // Fazer algo com os valores (por exemplo, enviar uma solicitação de login)
-    if (email === 'teste@email.com' && password === 'senha123') {
-      // Redirecionar para a página desejada
-      console.log('Credenciais válidas, redirecionando...');
-
-      window.location.href = '../verifica/';
-    } else {
-      // Lógica para exibir uma mensagem de erro, por exemplo
-      console.log('Credenciais inválidas');
+    try {
+      
+      if (email === "usuario" && password === "senha") {
+        // Redirecionar para a página desejada
+        console.log('Credenciais válidas, redirecionando...');
+        window.location.href = '../verifica/';
+      } else {
+        // Lógica para exibir uma mensagem de erro, por exemplo
+        console.log('Credenciais inválidas');
+      }
+    } catch (error) {
+      // Tratar erros de conexão com o banco de dados
+      console.error('Erro ao buscar as credenciais:', error);
     }
   }
   return (
-
-
 
     <section className="bg-preto-fundo" style={{ minHeight: '100vh' }}>
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
