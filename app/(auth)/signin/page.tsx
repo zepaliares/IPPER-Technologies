@@ -21,7 +21,7 @@ export default function SignIn() {
       // Redirecionar para a página desejada
       console.log('Credenciais válidas, redirecionando...');
 
-      window.location.href = './';
+      window.location.href = '../verifica/';
     } else {
       // Lógica para exibir uma mensagem de erro, por exemplo
       console.log('Credenciais inválidas');

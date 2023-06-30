@@ -1,0 +1,51 @@
+
+
+.Card{
+   
+    position: relative;
+    width: 450px;
+    height: 250px;
+    background-color: #151719;
+    border-radius: 30px;
+    box-shadow: 0 0 90px #5658dd;
+    transition: 0.5 linear;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    font-size: 1rem;
+    padding: 20px;
+}
+.corpo{
+    display: flex;
+     justify-content: center;
+    align-items: center; 
+    
+}
+.Carde{
+   
+    position: relative;
+    width: 450px;
+    height: 250px;
+    background-color: #151719;
+    border-radius: 30px;
+    transition: 0.5 linear;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    font-size: 1rem;
+    padding: 20px;
+}
+.texto{
+    color: #dadff0;
+    align-self: center;
+}
+
+/* .btn{
+    background-color: #5658dd;
+    padding: 10px;
+    margin: 10px;
+    color: #dadff0;
+} */
+ .espaco{
+    padding: 80px;
+ }
