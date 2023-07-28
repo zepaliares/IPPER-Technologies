@@ -3,6 +3,7 @@
 import Link from 'next/link'
 import React from 'react';
 
+
 export default function SignIn() {
 
   const handleSignIn = async () => {
@@ -15,14 +16,15 @@ export default function SignIn() {
     const password = passwordInput.value;
 
     try {
-      
-      if (email === "usuario" && password === "senha") {
+
+      if (email === "usuario@gmail.com" && password === "senha") {
         // Redirecionar para a página desejada
         console.log('Credenciais válidas, redirecionando...');
-        window.location.href = '../verifica/';
+        window.location.href = '/verifica';
       } else {
         // Lógica para exibir uma mensagem de erro, por exemplo
         console.log('Credenciais inválidas');
+
       }
     } catch (error) {
       // Tratar erros de conexão com o banco de dados
@@ -44,14 +46,14 @@ export default function SignIn() {
               </div>
             </div>
           </div>
-          
+
           {/* Form */}
           <div className="max-w-sm mx-auto">
-            <form onSubmit={handleSignIn}>
+            <form>
               <div className="flex flex-wrap -mx-3 mb-4">
                 <div className="w-full px-3">
                   <label className="block text-gray-400 text-sm font-medium mb-1" htmlFor="email">Email</label>
-                  <input id="email" type="email" className="form-input w-full text-gray-800" placeholder="Insira seu endereço de email" required/>
+                  <input id="email" type="email" className="form-input w-full text-gray-800" placeholder="Insira seu endereço de email" required />
                 </div>
               </div>
               <div className="flex flex-wrap -mx-3 mb-4">
@@ -60,7 +62,7 @@ export default function SignIn() {
                     <label className="block text-gray-400 text-sm font-medium mb-1" htmlFor="password">Senha</label>
 
                   </div>
-                  <input id="password" type="password" className="form-input w-full text-gray-800" placeholder="Insira sua senha" required/>
+                  <input id="password" type="password" className="form-input w-full text-gray-800" placeholder="Insira sua senha" required />
 
                 </div>
 
@@ -81,7 +83,7 @@ export default function SignIn() {
               </div>
               <div className="flex flex-wrap -mx-3 mt-6">
                 <div className="w-full px-3">
-                  <button className="btn text-white bg-indigo-600 hover:bg-indigo-700 w-full">Entrar</button>
+                  <button className="btn text-white bg-indigo-600 hover:bg-indigo-700 w-full" type='button' onClick={handleSignIn}>Entrar</button>
                 </div>
               </div>
 

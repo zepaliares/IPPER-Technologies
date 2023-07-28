@@ -1,0 +1,7 @@
+.container{
+    align-items: center;
+    align-self: center;
+    justify-items: center;
+    padding: 20px;
+    background-color: rgb(36, 39, 41);
+}
