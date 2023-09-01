@@ -1,10 +1,8 @@
 // pages/api/autenticacao.js
 import { MongoClient } from 'mongodb';
 
-export default async function handler(req, res) {
-  const { method } = req;
-
-  if (method === 'POST') {
+export default async function handler(req, res) {  //export const postAutenticacao = async (req, res) => {
+  if (req.method === 'POST') {
     const { email, password } = req.body;
 
     try {
