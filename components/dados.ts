@@ -5,21 +5,43 @@ const dbName = 'logan';
 const collectionName = 'dados';
 const client = new MongoClient(url);
 
-export const fetchCredentials = async () => {
+let usuarios: string[] = [];
+let senhas: string[] = [];
+
+const fetchCredentials = async () => {
   try {
     await client.connect();
     const db = client.db(dbName);
     console.log('Conexão com o banco de dados estabelecida.');
+    
 
     const collection = db.collection(collectionName);
 
-    const result = await collection.findOne();
-    const senha = result?.senha || null; // Atualiza o valor da variável de instância
-    const usuario = result?.usuario || null;
+    const results = await collection.find().toArray();
+    usuarios = results.map((result) => result.usuario);
+    senhas = results.map((result) => result.senha);
 
-    return { senha, usuario };
+    console.log(usuarios)
+    console.log(senhas)
+
+ 
   } catch (error) {
     console.error('Erro ao conectar ao banco de dados:', error);
     throw error;
   }
 };
+
+
+const ConnectDB = () => {
+  console.log('Valor do usuario:', usuarios);
+  console.log('Valor do senha:', senhas);
+
+  return (
+    null
+  );
+};
+
+fetchCredentials(); // Inicia a busca de dados no banco de dados
+
+export default ConnectDB;
+// export { usuarios as usuarios, senhas as senhas };
